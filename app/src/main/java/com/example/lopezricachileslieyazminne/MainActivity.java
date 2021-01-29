@@ -2,6 +2,7 @@ package com.example.lopezricachileslieyazminne;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.view.View;
@@ -70,7 +71,8 @@ public class MainActivity extends AppCompatActivity {
             //Toast.makeText(getApplicationContext(),usuario.getText()+"  "+usuariobd+"    "+clavebd,Toast.LENGTH_SHORT).show();
             if(usu.equals(usuariobd)&& cla.equals(clavebd)){
                 Toast.makeText(getApplicationContext(),"Bienvenido:"+usuariobd,Toast.LENGTH_SHORT).show();
-
+                Intent intent=new Intent(this, Registros.class);
+                startActivity(intent);
             }else{
                 Toast.makeText(getApplicationContext(),"Credenciales Incorrectas",Toast.LENGTH_SHORT).show();
             }
