@@ -55,16 +55,19 @@ public class MainActivity extends AppCompatActivity {
         }
         return  conexion;
     }
+
     public void login(){
         try{
             String usu=usuario.getText().toString();
             String cla=clave.getText().toString();
-            String usuariobd="", clavebd="";
-            Statement stn=conexionBD().createStatement();
+            String usuariobd="", clavebd="", cedulabd="";
 
+            Statement stn=conexionBD().createStatement();
             ResultSet rs=stn.executeQuery("Select * from ESTUDIANTES where CORREO_UTA='"+usuario.getText()+"'");
+
             if (rs.next()){
                 usuariobd=rs.getString("CORREO_UTA");
+                cedulabd=rs.getString("CEDULA");
                 clavebd=rs.getString("clave");
             }
 
@@ -72,6 +75,9 @@ public class MainActivity extends AppCompatActivity {
             if(usu.equals(usuariobd)&& cla.equals(clavebd)){
                 Toast.makeText(getApplicationContext(),"Bienvenido:"+usuariobd,Toast.LENGTH_SHORT).show();
                 Intent intent=new Intent(this, Registros.class);
+
+                //pasar parametros a un activity
+                intent.putExtra("clave_nombre",cedulabd);
                 startActivity(intent);
             }else{
                 Toast.makeText(getApplicationContext(),"Credenciales Incorrectas",Toast.LENGTH_SHORT).show();

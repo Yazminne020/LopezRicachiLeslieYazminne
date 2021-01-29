@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">LopezRicachiLeslieYazminne</string>
+    <string name="tv_usuario">Usuario</string>
+    <string name="tv_clave">Clave</string>
+    <string name="tp_hint_clave">Ingrese la Clave</string>
+    <string name="tp_hint_usuario">Ingrese Usuario</string>
+    <string name="btn_ingresar">Ingresar</string>
+    <string name="tv_titulo">Resoluciones en Proceso</string>
+    <string name="tv_intro">Inicio de Sesión como:</string>
+    <string name="tv_vacio" />
 </resources>
